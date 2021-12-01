@@ -20,6 +20,14 @@ class Tienda {
         Producto gorra = Producto("Gorra", "Vestimenta", 45.00);
         Producto lentes = Producto("Lentes de sol", "Vestimenta", 81.65);
 
+        int pastas = 0; 
+        int cepillos = 0;
+        int desodorantes = 0;
+        int manzanas = 0; 
+        int cacahuatess = 0;
+        int gorras = 0; 
+        int lentess = 0;
+
         Producto opciones[7] = {pasta, cepillo, desodorante, manzana, cacahuates, gorra, lentes};
         // ----------------------------------------------------------------------------------------
         vector<Producto> catalogo;
@@ -37,13 +45,6 @@ class Tienda {
         }
         
         void mostrarCatalogo(void) {
-            int pastas = 0; 
-            int cepillos = 0;
-            int desodorantes = 0;
-            int manzanas = 0; 
-            int cacahuatess = 0;
-            int gorras = 0; 
-            int lentess = 0;
 
             //Cuenta cuantos productos hay de cada uno en el catalogo generado
             for (Producto producto : catalogo) {
