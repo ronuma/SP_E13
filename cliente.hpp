@@ -5,40 +5,40 @@ using namespace std;
 class Cliente {
 
     private:
-        string _Email, _Direccion;
+        string _email, _direccion;
     
     public:
 //-----------Constructores----------
         Cliente(void){
-            _Email = "";
-         _Direccion = "";
+            _email = "";
+            _direccion = "";
         }
 
-        Cliente(string Email, string Direccion ){
-            setEmail(Email);
-            setDireccion(Direccion);
+        Cliente(string email, string direccion ){
+            setEmail(email);
+            setDireccion(direccion);
         }
 //-------------Sets-----------------
-        void setEmail(string Email){
-            _Email = Email;
+        void setEmail(string email){
+            _email = email;
         }
-        void setDireccion(string Direccion){
-            _Direccion = Direccion;
+        void setDireccion(string direccion){
+            _direccion = direccion;
         }
         
 //-------------Gets-----------------
         string getEmail(void){
-            return _Email;
+            return _email;
         }
 
         string getDireccion(void){
-            return _Direccion;
+            return _direccion;
         }
 //-------------Metodos-----------------
-        
+
         void imprimirCliente(void){
-            cout<<"Su email es"<<_Email<<endl;
-            cout<<" Direccion es"<<_Direccion<<endl;
+            cout<<"Su email es"<<_email<<endl;
+            cout<<" Direccion es"<<_direccion<<endl;
         }
 
 
