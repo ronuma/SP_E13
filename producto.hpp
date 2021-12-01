@@ -10,7 +10,12 @@ class Producto {
         double _precio;
     
     public:
-        //Preguntar al prof si hay que incluir constructor por defecto aunque no lo vayamos a usar
+        Producto(void) {
+            _nombre = "";
+            _tipo = "";
+            _inventario = 0;
+            _precio = 0.0;
+        }
 
         Producto(string nombre, string tipo, int inventario, double precio) {
             setNombre(nombre);
@@ -54,8 +59,6 @@ class Producto {
         }
 
 // ------------METODOS------------------
-
-//falta el de agregar al carrito
 
         void imprimir(void) {
             cout << _nombre << endl;

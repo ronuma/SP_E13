@@ -8,22 +8,21 @@ using namespace std;
 
 class Tienda {
     public:
-
         //Cliente cliente;
         //Carrito carrito;
-        string tiposDeProducto[2];
-        string nombresDeProducto[2];
+        Producto pasta = Producto("Pasta de dientes", "Higiene personal", 0, 35.50);
+        Producto cepillo = Producto("Cepillo de dientes", "Higiene personal", 0, 42.30);
+        Producto desodorante = Producto("Desodorante en aerosol", "Higiene personal", 0, 65.50);
+        Producto manzana = Producto("Manzana", "Alimentos", 0, 12.20);
+        Producto cacahuates = Producto("Cacahuates japoneses", "Alimentos", 0, 18.25);
         vector<Producto> catalogo;
 
         Tienda(void) {
-            tiposDeProducto[2] = {"Tipo1", "Tipo2"}; //Definir valores y cantidad (en clase)
-            nombresDeProducto[2] = {"Nombre1", "Nombre2"}; //Definir valores y cantidad (en clase)
+        
         }
 
         void generarCatalogo(void) {
-            for (int i = 0; i < 100; i++) {
-                string nombre = nombresDeProducto[rand() % 2];
-                string tipo = tiposDeProducto[rand() % 2];
+            for (int i = 0; i < 30; i++) {
             }
         }
         
