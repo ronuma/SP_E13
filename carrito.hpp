@@ -8,7 +8,7 @@ class Carrito {
     private:
         vector<Producto> _productos;
     public:
-        Carrito(vector<Producto> productos,){
+        Carrito(vector<Producto> productos){
             setProductos(productos);
 
         }
@@ -36,6 +36,10 @@ class Carrito {
         void impimirCarrito(void){
 
         }
+        void pagar(void){
+            cout<<"su total a pagar es de "<<calcularTotal(_productos)<<endl;
+        }
+
         
 
 
