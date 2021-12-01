@@ -6,21 +6,18 @@ class Producto {
 
     private:
         string _nombre, _tipo;
-        int _inventario;
         double _precio;
     
     public:
         Producto(void) {
             _nombre = "";
             _tipo = "";
-            _inventario = 0;
             _precio = 0.0;
         }
 
-        Producto(string nombre, string tipo, int inventario, double precio) {
+        Producto(string nombre, string tipo, double precio) {
             setNombre(nombre);
             setTipo(tipo);
-            setInventario(inventario);
             setPrecio(precio);
         }
 
@@ -33,9 +30,6 @@ class Producto {
             _tipo = tipo;
         }
 
-        void setInventario(int inventario) {
-            _inventario = inventario;
-        }
 
         void setPrecio(double precio) {
             _precio = precio;
@@ -50,10 +44,6 @@ class Producto {
             return _tipo;
         }
 
-        int getInventario(void) {
-            return _inventario;
-        }
-
         double getPrecio(void) {
             return _precio;
         }
@@ -61,9 +51,9 @@ class Producto {
 // ------------METODOS------------------
 
         void imprimir(void) {
+            cout << endl;
             cout << _nombre << endl;
             cout << "Tipo: " << _tipo << endl;
             cout << "Precio: " << _precio << endl;
-            cout << "En inventario: " << _inventario << endl;
         }
 };
