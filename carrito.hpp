@@ -36,6 +36,10 @@ class Carrito {
         void impimirCarrito(void){
 
         }
+        void pagar(void){
+            cout<<"su total a pagar es de "<<calcularTotal(_productos)<<endl;
+        }
+
         
 
 
