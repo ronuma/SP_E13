@@ -8,7 +8,7 @@ class Carrito {
     private:
         vector<Producto> _productos;
     public:
-        Carrito(vector<Producto> productos,){
+        Carrito(vector<Producto> productos){
             setProductos(productos);
 
         }
