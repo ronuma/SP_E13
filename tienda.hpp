@@ -29,23 +29,25 @@ class Tienda {
         Tienda(void) {
         }
 
+//--------RODRIGO: RESOLVER ESTE ERROR. YA SÉ CÓMO SÓLO LO TENGO QUE ATERRIZAR-------
         void generarCatalogo(void) {
             srand((unsigned) time(0));
 
             for (int i = 0; i < 30; i++) {
-                for (Producto producto : _opciones) {
-                    if (producto.getNombre() == _catalogo[i].getNombre()) {
-                        cout << _catalogo[i].getNombre() << endl;
-                        cout << producto.getNombre() << endl;
-                        _catalogo[i].enInventario++;
-                    } else {
-                        Producto producto = _opciones[rand() % 7];
-                        _catalogo.push_back(producto);
-                    }
+                Producto producto = _opciones[rand() % 7];
+                if (_catalogo[i].getNombre() == producto.getNombre()) {
+
                 }
+                // for (Producto producto : _opciones) {
+                //     if (_catalogo[i].getNombre() != producto.getNombre()) {
+                //         _catalogo.push_back(producto_);
+                //     } else {
+                //         _catalogo[i].enInventario++;
+                //     }
+                // }
             }
         }
-        
+//----------------------------------------------------------------------------------------        
         void mostrarCatalogo(void) {
             for (Producto producto : _catalogo) {
                 producto.imprimir();

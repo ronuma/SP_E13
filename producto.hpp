@@ -10,7 +10,7 @@ class Producto {
     
     public:
 
-        int enInventario = 0;
+        int enInventario = 1;
 
         Producto(void) {
             _nombre = "";
