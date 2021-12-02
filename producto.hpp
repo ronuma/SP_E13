@@ -55,7 +55,6 @@ class Producto {
 // ------------METODOS------------------
 
         void imprimir(void) {
-            cout << endl;
             cout << _nombre << endl;
             cout << "Tipo: " << _tipo << endl;
             cout << "Precio: " << _precio << endl;

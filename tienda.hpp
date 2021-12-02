@@ -43,6 +43,10 @@ class Tienda {
         return _cliente;
     }
 
+    vector<Producto> getCatalogo(void) {
+        return _catalogo;
+    }
+
         vector<Producto> generarCatalogo(void) {
             srand((unsigned) time(0));
             for (int i = 0; i < 30; i++) {
@@ -62,10 +66,14 @@ class Tienda {
      
 
         void mostrarCatalogo(void) {
+            int index = 0;
             cout << endl;
             cout << "Catalogo de productos: " << endl;
+            cout << endl;
             for (Producto producto : _catalogo) {
+                cout << "[" << index << "] ";
                 producto.imprimir();
+                index++;
             }            
         }
 };
