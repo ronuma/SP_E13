@@ -9,6 +9,9 @@ class Producto {
         double _precio;
     
     public:
+
+        int enInventario = 0;
+
         Producto(void) {
             _nombre = "";
             _tipo = "";
@@ -55,5 +58,6 @@ class Producto {
             cout << _nombre << endl;
             cout << "Tipo: " << _tipo << endl;
             cout << "Precio: " << _precio << endl;
+            cout << "En inventario: " << enInventario << endl;
         }
 };

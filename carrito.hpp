@@ -24,23 +24,24 @@ class Carrito {
         void agregarProducto(Producto producto){
             _productos.push_back(producto);
         }
-        //calcule el total con las propiedad de los precion de nuestra lista de productos
-        double calcularTotal(vector<Producto> _productos){
+        //calcule el total con las propiedad de los precios de nuestra lista de productos
+        double calcularTotal(vector<Producto> _productos) {
           double total = 0;
-          for (int i = 0; i < _productos.size(); i++)
+          for (Producto producto : _productos)
           {
-              total = total + _productos[i].getPrecio();
+              total = total + producto.getPrecio();
           }
             return total;
         }
-        void impimirCarrito(void){
 
+        void impimir(void){
+            cout << "Productos en el carrito: " << endl;
+            for (Producto producto : _productos) {
+                producto.imprimir();
+            }
         }
         void pagar(void){
-            cout<<"su total a pagar es de "<<calcularTotal(_productos)<<endl;
+            cout<<"Su total a pagar es de "<<calcularTotal(_productos)<<endl;
         }
-
-        
-
 
 };
