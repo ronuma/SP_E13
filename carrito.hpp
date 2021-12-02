@@ -8,20 +8,20 @@ class Carrito {
     private:
         vector<Producto> _productos;
     public:
-        Carrito(vector<Producto> productos){
+        Carrito(vector<Producto> productos) {
             setProductos(productos);
 
         }
 //---------------Sets----------------
-        void setProductos(vector<Producto> productos){
+        void setProductos(vector<Producto> productos) {
             _productos=productos;
         }  
 //---------------Gets----------------
-        vector<Producto> getProductos(void){
+        vector<Producto> getProductos(void) {
             return _productos;
         }
 //---------------Metodos----------------
-        void agregarProducto(Producto producto){
+        void agregarProducto(Producto producto) {
             _productos.push_back(producto);
         }
         //calcule el total con las propiedad de los precios de nuestra lista de productos
@@ -41,7 +41,7 @@ class Carrito {
             }
         }
         void pagar(void){
-            cout<<"Su total a pagar es de "<<calcularTotal(_productos)<<endl;
+            cout << "Su total a pagar es de: " << calcularTotal(_productos) << endl;
         }
 
 };

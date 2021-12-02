@@ -11,13 +11,13 @@ class Tienda {
         vector<Producto> _catalogo;
 
  // --------------------- PRODUCTOS QUE SE PUEDEN VENDER ---------------------------------
-        Producto _pasta = Producto("Pasta de dientes", "Higiene personal", 35.50);
-        Producto _cepillo = Producto("Cepillo de dientes", "Higiene personal", 42.30);
-        Producto _desodorante = Producto("Desodorante en aerosol", "Higiene personal", 65.50);
-        Producto _manzana = Producto("Manzana", "Alimentos", 12.20);
-        Producto _cacahuates = Producto("Cacahuates japoneses", "Alimentos", 18.25);
-        Producto _gorra = Producto("Gorra", "Vestimenta", 45.00);
-        Producto _lentes = Producto("Lentes de sol", "Vestimenta", 81.65);
+        Producto _pasta = Producto("Pasta de dientes", "Higiene personal", 0, 35.50);
+        Producto _cepillo = Producto("Cepillo de dientes", "Higiene personal", 0, 42.30);
+        Producto _desodorante = Producto("Desodorante en aerosol", "Higiene personal", 0, 65.50);
+        Producto _manzana = Producto("Manzana", "Alimentos", 0, 12.20);
+        Producto _cacahuates = Producto("Cacahuates japoneses", "Alimentos", 0, 18.25);
+        Producto _gorra = Producto("Gorra", "Vestimenta", 0, 45.00);
+        Producto _lentes = Producto("Lentes de sol", "Vestimenta", 0, 81.65);
 
         Producto _opciones[7] = {_pasta, _cepillo, _desodorante, _manzana, _cacahuates, _gorra, _lentes};
 // ----------------------------------------------------------------------------------------
@@ -29,28 +29,33 @@ class Tienda {
         Tienda(void) {
         }
 
-//--------RODRIGO: RESOLVER ESTE ERROR. YA SÉ CÓMO SÓLO LO TENGO QUE ATERRIZAR-------
         void generarCatalogo(void) {
             srand((unsigned) time(0));
-
             for (int i = 0; i < 30; i++) {
                 Producto producto = _opciones[rand() % 7];
-                if (_catalogo[i].getNombre() == producto.getNombre()) {
-
+                //ESTA SOLUCION NO SE ME HACE LO SUFICIENTEMENTE DINAMICA, ¿QUE PASA SI CAMBIA EL TAMAÑO DE OPCIONES
+                for (int j = 0; j < 7; j++) {   
+                    if(producto.getNombre() == _opciones[j].getNombre() ) {
+                        _opciones[j].enInventario++;
+                    }
                 }
-                // for (Producto producto : _opciones) {
-                //     if (_catalogo[i].getNombre() != producto.getNombre()) {
-                //         _catalogo.push_back(producto_);
-                //     } else {
-                //         _catalogo[i].enInventario++;
-                //     }
-                // }
+            }
+
+            for (Producto productoGenerado : _opciones) {
+                _catalogo.push_back(productoGenerado);
             }
         }
-//----------------------------------------------------------------------------------------        
+     
+
         void mostrarCatalogo(void) {
             for (Producto producto : _catalogo) {
                 producto.imprimir();
             }            
+        }
+
+        void mostrarCliente(void) {}
+
+        void mostrarCarrito(void) {
+            
         }
 };

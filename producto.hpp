@@ -10,7 +10,7 @@ class Producto {
     
     public:
 
-        int enInventario = 1;
+        int enInventario = 0;
 
         Producto(void) {
             _nombre = "";
@@ -18,10 +18,11 @@ class Producto {
             _precio = 0.0;
         }
 
-        Producto(string nombre, string tipo, double precio) {
+        Producto(string nombre, string tipo, int enInventario_, double precio) {
             setNombre(nombre);
             setTipo(tipo);
             setPrecio(precio);
+            enInventario = enInventario_;
         }
 
 // --------------SETS--------------------
@@ -59,5 +60,6 @@ class Producto {
             cout << "Tipo: " << _tipo << endl;
             cout << "Precio: " << _precio << endl;
             cout << "En inventario: " << enInventario << endl;
+            cout << endl;
         }
 };
