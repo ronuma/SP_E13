@@ -1,5 +1,6 @@
 #include <iostream>
 #include "producto.hpp"
+#include "cliente.hpp"
 #include <vector>
 #include <ctime>
 #include <cstdlib>
@@ -9,6 +10,7 @@ using namespace std;
 class Tienda {
     private: 
         vector<Producto> _catalogo;
+        Cliente _cliente;
 
  // --------------------- PRODUCTOS QUE SE PUEDEN VENDER ---------------------------------
         Producto _pasta = Producto("Pasta de dientes", "Higiene personal", 0, 35.50);
@@ -23,39 +25,47 @@ class Tienda {
 // ----------------------------------------------------------------------------------------
 
     public:
-        //Cliente cliente;
-        //Carrito carrito;
+//-----------Constructores----------
+        Tienda(void) {}
 
-        Tienda(void) {
+        Tienda(Cliente cliente) {
+            setCliente(cliente);
+            _catalogo = generarCatalogo();
         }
 
-        void generarCatalogo(void) {
+//-------------Sets-----------------
+    void setCliente(Cliente cliente) {
+        _cliente = cliente;
+    }
+
+//-------------Gets-----------------
+    Cliente getCliente(void) {
+        return _cliente;
+    }
+
+        vector<Producto> generarCatalogo(void) {
             srand((unsigned) time(0));
             for (int i = 0; i < 30; i++) {
                 Producto producto = _opciones[rand() % 7];
-                //ESTA SOLUCION NO SE ME HACE LO SUFICIENTEMENTE DINAMICA, ¿QUE PASA SI CAMBIA EL TAMAÑO DE OPCIONES
+                //ESTA SOLUCION NO SE ME HACE LO SUFICIENTEMENTE DINAMICA, ¿QUE PASA SI CAMBIA EL TAMAÑO DE OPCIONES?
                 for (int j = 0; j < 7; j++) {   
                     if(producto.getNombre() == _opciones[j].getNombre() ) {
                         _opciones[j].enInventario++;
                     }
                 }
             }
-
             for (Producto productoGenerado : _opciones) {
                 _catalogo.push_back(productoGenerado);
             }
+            return _catalogo;
         }
      
 
         void mostrarCatalogo(void) {
+            cout << endl;
+            cout << "Catalogo de productos: " << endl;
             for (Producto producto : _catalogo) {
                 producto.imprimir();
             }            
-        }
-
-        void mostrarCliente(void) {}
-
-        void mostrarCarrito(void) {
-            
         }
 };

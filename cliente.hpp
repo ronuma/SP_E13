@@ -37,8 +37,10 @@ class Cliente {
 //-------------Metodos-----------------
 
         void imprimir(void) {
+            cout << endl;
             cout << "Su email es: " << _email << endl;
             cout << "La direccion de entrega es: " << _direccion << endl;
+            cout << endl;
         }
 
 
