@@ -32,7 +32,7 @@ int main(void) {
             for (int i = 0; i < cantidad; i++)
             {
                 carrito.agregarProducto(productoSeleccionado);
-               productoSeleccionado.actualizarInventario(productoSeleccionado);
+                productoSeleccionado.actualizarInventario(productoSeleccionado);
 
             }
         }
@@ -50,6 +50,7 @@ int main(void) {
             //MOSTRAR EL CARRITO
             carrito.impimir();
             //MOSTRAR EL TOTAL A PAGAR Y LA INFORMACION DEL CLIENTE
+            carrito.pagar();
             continuar = false;
         }
         
