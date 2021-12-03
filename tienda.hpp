@@ -29,7 +29,7 @@ class Tienda {
 //-----------Constructores----------
         Tienda(void) {}
 
-        Tienda(Cliente cliente, Carrito _carrito) {
+        Tienda(Cliente cliente) {
             setCliente(cliente);
             _catalogo = generarCatalogo();
             _carrito = Carrito();
