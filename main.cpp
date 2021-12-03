@@ -19,20 +19,19 @@ int main(void) {
         cout << "Ingrese el indice del producto que desea agregar al carrito: ";
         cin >> indiceProducto;
         cout << endl;
-        Producto productoSeleccionado = catalogo[indiceProducto];
         cout << "Seleccion: " << endl;
-        productoSeleccionado.imprimir();
+        catalogo[indiceProducto].imprimir();
 
         cout << "Indique la cantidad que desea agregar al carrito ";
-        cout << "(" << productoSeleccionado.enInventario;
+        cout << "(" << catalogo[indiceProducto].enInventario;
         cout << " en inventario): ";
         cin >> cantidad;
         cout << endl;
-        if(cantidad <= productoSeleccionado.enInventario ){
+        if(cantidad <= catalogo[indiceProducto].enInventario ){
             for (int i = 0; i < cantidad; i++)
             {
-                carrito.agregarProducto(productoSeleccionado);
-                productoSeleccionado.actualizarInventario(productoSeleccionado);
+                carrito.agregarProducto(catalogo[indiceProducto]);
+                //catalogo[indiceProducto].actualizarInventario();
 
             }
         }
