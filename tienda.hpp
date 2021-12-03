@@ -1,5 +1,5 @@
 #include <iostream>
-#include "producto.hpp"
+#include "carrito.hpp"
 #include "cliente.hpp"
 #include <vector>
 #include <ctime>
@@ -11,6 +11,7 @@ class Tienda {
     private: 
         vector<Producto> _catalogo;
         Cliente _cliente;
+        Carrito _carrito;
 
  // --------------------- PRODUCTOS QUE SE PUEDEN VENDER ---------------------------------
         Producto _pasta = Producto("Pasta de dientes", "Higiene personal", 0, 35.50);
@@ -31,6 +32,7 @@ class Tienda {
         Tienda(Cliente cliente) {
             setCliente(cliente);
             _catalogo = generarCatalogo();
+            _carrito = Carrito();
         }
 
 //-------------Sets-----------------
@@ -45,6 +47,9 @@ class Tienda {
 
     vector<Producto> getCatalogo(void) {
         return _catalogo;
+    }
+    Carrito getCarrito(){
+        return _carrito;
     }
 
         vector<Producto> generarCatalogo(void) {

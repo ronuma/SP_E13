@@ -1,2 +1,1 @@
- tienda.mostrarCatalogo();
-    tienda.getCliente().imprimir();
+= 0; i < 
