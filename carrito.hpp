@@ -40,15 +40,20 @@ class Carrito {
             return total;
         }
 
-        void impimir(void){
+        void impimir(void) {
             cout << "Productos en el carrito: " << endl;
+            cout << endl;
+            //PODRIA MEJORAR LA LOGICA AQUI, PARA NO MOSTRAR EL PRODUCTO REPETIDO SINO SU CANTIDAD Y RESUMEN DEL PRECIO
             for (Producto producto : _productos) {
-                producto.imprimir();
+                cout << "Producto: " << producto.getNombre() << endl;
+                cout << "Precio: " << producto.getPrecio() << endl;
             }
         }
 
         void pagar(void){
+            cout << endl;
             cout << "Su total a pagar es de: " << calcularTotal(_productos) << endl;
+            cout << endl;
         }
 
 };

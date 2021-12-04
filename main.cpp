@@ -16,9 +16,11 @@ int main(void) {
 
     while(continuar == true) {
         tienda.mostrarCatalogo();
+
         cout << "Ingrese el indice del producto que desea agregar al carrito: ";
         cin >> indiceProducto;
         cout << endl;
+
         cout << "Seleccion: " << endl;
         catalogo[indiceProducto].imprimir();
 
@@ -27,21 +29,22 @@ int main(void) {
         cout << " en inventario): ";
         cin >> cantidad;
         cout << endl;
-        if(cantidad <= catalogo[indiceProducto].enInventario ){
-            for (int i = 0; i < cantidad; i++)
-            {
-                carrito.agregarProducto(catalogo[indiceProducto]);
-                //catalogo[indiceProducto].actualizarInventario();
 
+        if(cantidad <= catalogo[indiceProducto].enInventario) {
+            /*QUISIMOS ACTUALIZAR LA CANTIDAD EN INVENTARIO A PARTIR DE LO QUE AGREGARA
+            AL CARRITO, INTENTAMOS VARIAS COSAS PERO NO NOS FUNCIONO. LO BUENO ES QUE ESO
+            NO INTERFIRIO CON LOS CONCEPTOS DE POO*/
+            for (int i = 0; i < cantidad; i++) {
+                carrito.agregarProducto(catalogo[indiceProducto]);
             }
+        } else {
+            cout << "Hubo un error con la solicitud, intente de nuevo" << endl;
+            cout << endl;
         }
-        
 
         cout << "Desea agregar otro producto al carrito (0) o pagar (1)?: ";
         cin >> continuarInput;
         cout << endl;
-        
-        //EVALUAR SI LA SELECCION DE USUARIO PERMITE SACAR DEL INVENTARIO
 
         if(continuarInput == 0) {
             continuar = true;

@@ -61,6 +61,4 @@ class Producto {
             cout << "En inventario: " << enInventario << endl;
             cout << endl;
         }
-       // void actualizarInventario(void){
-         //   enInventario --;
 };
